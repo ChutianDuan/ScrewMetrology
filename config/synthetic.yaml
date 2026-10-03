@@ -1,0 +1,11 @@
+%YAML:1.0
+segmentation: otsu
+axis: pca
+invert: 1
+subpixel: 1
+blur: 1
+morph_open: 1
+morph_close: 1
+min_area: 100.
+max_area: 100000.
+gradient_min: 5.

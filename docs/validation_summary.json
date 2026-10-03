@@ -1,0 +1,671 @@
+{
+  "date": "2026-10-03",
+  "environment": "macOS arm64 / AppleClang 21 / OpenCV 5.0.0 / C++17",
+  "config_sha256": "5ea4fddc42a32a8ee4c098ea290b606cf0424f9ae82da8e0fe63f5e560bb81dc",
+  "ctest": {
+    "passed": 7,
+    "total": 7
+  },
+  "representative_comparison": {
+    "otsu": {
+      "tp": 39,
+      "fp": 442,
+      "fn": 141,
+      "recall": 0.216666666667,
+      "precision": 0.0810810810811
+    },
+    "adaptive": {
+      "tp": 4,
+      "fp": 417,
+      "fn": 176,
+      "recall": 0.0222222222222,
+      "precision": 0.00950118764846
+    },
+    "lab": {
+      "tp": 144,
+      "fp": 30,
+      "fn": 36,
+      "recall": 0.8,
+      "precision": 0.827586206897
+    }
+  },
+  "full_detection": {
+    "iou_threshold": 0.5,
+    "matching": "greedy_descending_iou_one_to_one",
+    "annotation_images": 384,
+    "evaluated_images": 384,
+    "failed_images": 0,
+    "tp": 3743,
+    "fp": 750,
+    "fn": 684,
+    "recall": 0.845493562232,
+    "precision": 0.833073670154,
+    "unreliable_predictions": 1970,
+    "center_error_px": {
+      "count": 3743,
+      "mean": 9.80425059496,
+      "mae": 9.80425059496,
+      "max_abs": 91.4434241153,
+      "std": 8.06915668264
+    },
+    "centroid_to_box_center_distance_px": {
+      "count": 3743,
+      "mean": 13.9428902505,
+      "mae": 13.9428902505,
+      "max_abs": 151.075577847,
+      "std": 13.4764301109
+    },
+    "angle_error_deg": {
+      "count": 2226,
+      "mean": 0.88456286228,
+      "mae": 0.88456286228,
+      "max_abs": 22.8685276748,
+      "std": 1.41778020997
+    },
+    "matched_iou": {
+      "count": 3743,
+      "mean": 0.718922007116,
+      "mae": 0.718922007116,
+      "max_abs": 0.973432553449,
+      "std": 0.0644898285562
+    },
+    "categories": [
+      {
+        "id": 1,
+        "matched": 236,
+        "total": 313,
+        "recall": 0.753993610224
+      },
+      {
+        "id": 2,
+        "matched": 239,
+        "total": 314,
+        "recall": 0.761146496815
+      },
+      {
+        "id": 3,
+        "matched": 246,
+        "total": 317,
+        "recall": 0.776025236593
+      },
+      {
+        "id": 4,
+        "matched": 245,
+        "total": 315,
+        "recall": 0.777777777778
+      },
+      {
+        "id": 5,
+        "matched": 318,
+        "total": 387,
+        "recall": 0.821705426357
+      },
+      {
+        "id": 6,
+        "matched": 315,
+        "total": 393,
+        "recall": 0.801526717557
+      },
+      {
+        "id": 7,
+        "matched": 327,
+        "total": 365,
+        "recall": 0.895890410959
+      },
+      {
+        "id": 8,
+        "matched": 304,
+        "total": 367,
+        "recall": 0.828337874659
+      },
+      {
+        "id": 9,
+        "matched": 293,
+        "total": 320,
+        "recall": 0.915625
+      },
+      {
+        "id": 10,
+        "matched": 311,
+        "total": 347,
+        "recall": 0.896253602305
+      },
+      {
+        "id": 11,
+        "matched": 316,
+        "total": 346,
+        "recall": 0.913294797688
+      },
+      {
+        "id": 12,
+        "matched": 295,
+        "total": 322,
+        "recall": 0.916149068323
+      },
+      {
+        "id": 13,
+        "matched": 298,
+        "total": 321,
+        "recall": 0.928348909657
+      }
+    ]
+  },
+  "batch": {
+    "schema": "screw_batch_v1",
+    "images": 384,
+    "failed": 0,
+    "objects": 4493,
+    "subpixel_refined": 1278,
+    "ok": 0,
+    "ng": 0,
+    "not_evaluated": 4493,
+    "seconds": 53.833694625
+  },
+  "synthetic_px": {
+    "schema": "screw_dimension_evaluation_v1",
+    "rows": 195,
+    "excluded": 0,
+    "errors": {
+      "head_length|px": {
+        "count": 39,
+        "mean": 0.974358974359,
+        "mae": 0.974358974359,
+        "max_abs": 1,
+        "std": 0.160128153805
+      },
+      "head_width|px": {
+        "count": 39,
+        "mean": 0.284428390015,
+        "mae": 0.284428390015,
+        "max_abs": 0.7816243206,
+        "std": 0.0938033761311
+      },
+      "length|px": {
+        "count": 39,
+        "mean": 0.247582416692,
+        "mae": 0.247582416692,
+        "max_abs": 0.472429955,
+        "std": 0.0635142431577
+      },
+      "shaft_width|px": {
+        "count": 39,
+        "mean": 0.102729430654,
+        "mae": 0.10302322989,
+        "max_abs": 0.32880384,
+        "std": 0.0760760105275
+      },
+      "width|px": {
+        "count": 39,
+        "mean": 0.282338188297,
+        "mae": 0.282338188297,
+        "max_abs": 0.7001064536,
+        "std": 0.0826818344726
+      }
+    },
+    "pixel_errors": {
+      "head_length|px": {
+        "count": 39,
+        "mean": 0.974358974359,
+        "mae": 0.974358974359,
+        "max_abs": 1,
+        "std": 0.160128153805
+      },
+      "head_width|px": {
+        "count": 39,
+        "mean": 0.213090561844,
+        "mae": 0.284989036387,
+        "max_abs": 1,
+        "std": 0.231591780094
+      },
+      "length|px": {
+        "count": 39,
+        "mean": 0.182693849897,
+        "mae": 0.264534245026,
+        "max_abs": 1,
+        "std": 0.244489695198
+      },
+      "shaft_width|px": {
+        "count": 39,
+        "mean": -0.935897435897,
+        "mae": 0.935897435897,
+        "max_abs": 1,
+        "std": 0.234506401537
+      },
+      "width|px": {
+        "count": 39,
+        "mean": 0.213090561844,
+        "mae": 0.284989036387,
+        "max_abs": 1,
+        "std": 0.231591780094
+      }
+    },
+    "subpixel_errors": {
+      "head_width|px": {
+        "count": 39,
+        "mean": 0.284428390015,
+        "mae": 0.284428390015,
+        "max_abs": 0.7816243206,
+        "std": 0.0938033761311
+      },
+      "length|px": {
+        "count": 39,
+        "mean": 0.247582416692,
+        "mae": 0.247582416692,
+        "max_abs": 0.472429955,
+        "std": 0.0635142431577
+      },
+      "shaft_width|px": {
+        "count": 39,
+        "mean": 0.102729430654,
+        "mae": 0.10302322989,
+        "max_abs": 0.32880384,
+        "std": 0.0760760105275
+      },
+      "width|px": {
+        "count": 39,
+        "mean": 0.282338188297,
+        "mae": 0.282338188297,
+        "max_abs": 0.7001064536,
+        "std": 0.0826818344726
+      }
+    },
+    "repeatability": {
+      "blur|head_length|px": {
+        "count": 1,
+        "mean": 37,
+        "min": 37,
+        "max": 37,
+        "std": null
+      },
+      "blur|head_width|px": {
+        "count": 1,
+        "mean": 48.2808046441,
+        "min": 48.2808046441,
+        "max": 48.2808046441,
+        "std": null
+      },
+      "blur|length|px": {
+        "count": 1,
+        "mean": 240.323551863,
+        "min": 240.323551863,
+        "max": 240.323551863,
+        "std": null
+      },
+      "blur|shaft_width|px": {
+        "count": 1,
+        "mean": 24.32880384,
+        "min": 24.32880384,
+        "max": 24.32880384,
+        "std": null
+      },
+      "blur|width|px": {
+        "count": 1,
+        "mean": 48.2808046441,
+        "min": 48.2808046441,
+        "max": 48.2808046441,
+        "std": null
+      },
+      "low_contrast|head_length|px": {
+        "count": 1,
+        "mean": 31,
+        "min": 31,
+        "max": 31,
+        "std": null
+      },
+      "low_contrast|head_width|px": {
+        "count": 1,
+        "mean": 40.3142005108,
+        "min": 40.3142005108,
+        "max": 40.3142005108,
+        "std": null
+      },
+      "low_contrast|length|px": {
+        "count": 1,
+        "mean": 200.472429955,
+        "min": 200.472429955,
+        "max": 200.472429955,
+        "std": null
+      },
+      "low_contrast|shaft_width|px": {
+        "count": 1,
+        "mean": 20.0935013617,
+        "min": 20.0935013617,
+        "max": 20.0935013617,
+        "std": null
+      },
+      "low_contrast|width|px": {
+        "count": 1,
+        "mean": 40.3142005108,
+        "min": 40.3142005108,
+        "max": 40.3142005108,
+        "std": null
+      },
+      "rotation_demo|head_length|px": {
+        "count": 6,
+        "mean": 30.8333333333,
+        "min": 30,
+        "max": 31,
+        "std": 0.408248290464
+      },
+      "rotation_demo|head_width|px": {
+        "count": 6,
+        "mean": 40.3130421966,
+        "min": 40.1345119053,
+        "max": 40.7816243206,
+        "std": 0.245534431283
+      },
+      "rotation_demo|length|px": {
+        "count": 6,
+        "mean": 200.319533845,
+        "min": 200.25,
+        "max": 200.396172242,
+        "std": 0.0578481126897
+      },
+      "rotation_demo|shaft_width|px": {
+        "count": 6,
+        "mean": 20.1794217512,
+        "min": 19.9942709149,
+        "max": 20.2913819444,
+        "std": 0.119522292683
+      },
+      "rotation_demo|width|px": {
+        "count": 6,
+        "mean": 40.2994558855,
+        "min": 40.1345119053,
+        "max": 40.7001064536,
+        "std": 0.214745332774
+      },
+      "simulated_repeat|head_length|px": {
+        "count": 30,
+        "mean": 31,
+        "min": 31,
+        "max": 31,
+        "std": 0
+      },
+      "simulated_repeat|head_width|px": {
+        "count": 30,
+        "mean": 40.2767024657,
+        "min": 40.2338140403,
+        "max": 40.3616710801,
+        "std": 0.0288718512979
+      },
+      "simulated_repeat|length|px": {
+        "count": 30,
+        "mean": 200.222247472,
+        "min": 200.150948893,
+        "max": 200.281030498,
+        "std": 0.0317094111414
+      },
+      "simulated_repeat|shaft_width|px": {
+        "count": 30,
+        "mean": 20.073793218,
+        "min": 20.0666239022,
+        "max": 20.0803273724,
+        "std": 0.00362586762429
+      },
+      "simulated_repeat|width|px": {
+        "count": 30,
+        "mean": 40.2767024657,
+        "min": 40.2338140403,
+        "max": 40.3616710801,
+        "std": 0.0288718512979
+      },
+      "small|head_length|px": {
+        "count": 1,
+        "mean": 25,
+        "min": 25,
+        "max": 25,
+        "std": null
+      },
+      "small|head_width|px": {
+        "count": 1,
+        "mean": 34.3183749048,
+        "min": 34.3183749048,
+        "max": 34.3183749048,
+        "std": null
+      },
+      "small|length|px": {
+        "count": 1,
+        "mean": 160.275105217,
+        "min": 160.275105217,
+        "max": 160.275105217,
+        "std": null
+      },
+      "small|shaft_width|px": {
+        "count": 1,
+        "mean": 16.293815546,
+        "min": 16.293815546,
+        "max": 16.293815546,
+        "std": null
+      },
+      "small|width|px": {
+        "count": 1,
+        "mean": 34.3183749048,
+        "min": 34.3183749048,
+        "max": 34.3183749048,
+        "std": null
+      }
+    }
+  },
+  "synthetic_mm": {
+    "schema": "screw_dimension_evaluation_v1",
+    "rows": 195,
+    "excluded": 0,
+    "errors": {
+      "head_length|mm": {
+        "count": 39,
+        "mean": 0.0974358974359,
+        "mae": 0.0974358974359,
+        "max_abs": 0.1,
+        "std": 0.0160128153805
+      },
+      "head_width|mm": {
+        "count": 39,
+        "mean": 0.0284428390015,
+        "mae": 0.0284428390015,
+        "max_abs": 0.07816243206,
+        "std": 0.00938033761311
+      },
+      "length|mm": {
+        "count": 39,
+        "mean": 0.0247582416692,
+        "mae": 0.0247582416692,
+        "max_abs": 0.0472429955,
+        "std": 0.00635142431577
+      },
+      "shaft_width|mm": {
+        "count": 39,
+        "mean": 0.0102729430654,
+        "mae": 0.010302322989,
+        "max_abs": 0.032880384,
+        "std": 0.00760760105275
+      },
+      "width|mm": {
+        "count": 39,
+        "mean": 0.0282338188297,
+        "mae": 0.0282338188297,
+        "max_abs": 0.07001064536,
+        "std": 0.00826818344726
+      }
+    },
+    "pixel_errors": {},
+    "subpixel_errors": {},
+    "repeatability": {
+      "blur|head_length|mm": {
+        "count": 1,
+        "mean": 3.7,
+        "min": 3.7,
+        "max": 3.7,
+        "std": null
+      },
+      "blur|head_width|mm": {
+        "count": 1,
+        "mean": 4.82808046441,
+        "min": 4.82808046441,
+        "max": 4.82808046441,
+        "std": null
+      },
+      "blur|length|mm": {
+        "count": 1,
+        "mean": 24.0323551863,
+        "min": 24.0323551863,
+        "max": 24.0323551863,
+        "std": null
+      },
+      "blur|shaft_width|mm": {
+        "count": 1,
+        "mean": 2.432880384,
+        "min": 2.432880384,
+        "max": 2.432880384,
+        "std": null
+      },
+      "blur|width|mm": {
+        "count": 1,
+        "mean": 4.82808046441,
+        "min": 4.82808046441,
+        "max": 4.82808046441,
+        "std": null
+      },
+      "low_contrast|head_length|mm": {
+        "count": 1,
+        "mean": 3.1,
+        "min": 3.1,
+        "max": 3.1,
+        "std": null
+      },
+      "low_contrast|head_width|mm": {
+        "count": 1,
+        "mean": 4.03142005108,
+        "min": 4.03142005108,
+        "max": 4.03142005108,
+        "std": null
+      },
+      "low_contrast|length|mm": {
+        "count": 1,
+        "mean": 20.0472429955,
+        "min": 20.0472429955,
+        "max": 20.0472429955,
+        "std": null
+      },
+      "low_contrast|shaft_width|mm": {
+        "count": 1,
+        "mean": 2.00935013617,
+        "min": 2.00935013617,
+        "max": 2.00935013617,
+        "std": null
+      },
+      "low_contrast|width|mm": {
+        "count": 1,
+        "mean": 4.03142005108,
+        "min": 4.03142005108,
+        "max": 4.03142005108,
+        "std": null
+      },
+      "rotation_demo|head_length|mm": {
+        "count": 6,
+        "mean": 3.08333333333,
+        "min": 3,
+        "max": 3.1,
+        "std": 0.0408248290464
+      },
+      "rotation_demo|head_width|mm": {
+        "count": 6,
+        "mean": 4.03130421966,
+        "min": 4.01345119053,
+        "max": 4.07816243206,
+        "std": 0.0245534431283
+      },
+      "rotation_demo|length|mm": {
+        "count": 6,
+        "mean": 20.0319533845,
+        "min": 20.025,
+        "max": 20.0396172242,
+        "std": 0.00578481126897
+      },
+      "rotation_demo|shaft_width|mm": {
+        "count": 6,
+        "mean": 2.01794217512,
+        "min": 1.99942709149,
+        "max": 2.02913819444,
+        "std": 0.0119522292683
+      },
+      "rotation_demo|width|mm": {
+        "count": 6,
+        "mean": 4.02994558855,
+        "min": 4.01345119053,
+        "max": 4.07001064536,
+        "std": 0.0214745332774
+      },
+      "simulated_repeat|head_length|mm": {
+        "count": 30,
+        "mean": 3.1,
+        "min": 3.1,
+        "max": 3.1,
+        "std": 9.03362056653e-16
+      },
+      "simulated_repeat|head_width|mm": {
+        "count": 30,
+        "mean": 4.02767024657,
+        "min": 4.02338140403,
+        "max": 4.03616710801,
+        "std": 0.00288718512979
+      },
+      "simulated_repeat|length|mm": {
+        "count": 30,
+        "mean": 20.0222247471,
+        "min": 20.0150948893,
+        "max": 20.0281030498,
+        "std": 0.00317094111414
+      },
+      "simulated_repeat|shaft_width|mm": {
+        "count": 30,
+        "mean": 2.0073793218,
+        "min": 2.00666239022,
+        "max": 2.00803273724,
+        "std": 0.000362586762429
+      },
+      "simulated_repeat|width|mm": {
+        "count": 30,
+        "mean": 4.02767024657,
+        "min": 4.02338140403,
+        "max": 4.03616710801,
+        "std": 0.00288718512979
+      },
+      "small|head_length|mm": {
+        "count": 1,
+        "mean": 2.5,
+        "min": 2.5,
+        "max": 2.5,
+        "std": null
+      },
+      "small|head_width|mm": {
+        "count": 1,
+        "mean": 3.43183749048,
+        "min": 3.43183749048,
+        "max": 3.43183749048,
+        "std": null
+      },
+      "small|length|mm": {
+        "count": 1,
+        "mean": 16.0275105217,
+        "min": 16.0275105217,
+        "max": 16.0275105217,
+        "std": null
+      },
+      "small|shaft_width|mm": {
+        "count": 1,
+        "mean": 1.6293815546,
+        "min": 1.6293815546,
+        "max": 1.6293815546,
+        "std": null
+      },
+      "small|width|mm": {
+        "count": 1,
+        "mean": 3.43183749048,
+        "min": 3.43183749048,
+        "max": 3.43183749048,
+        "std": null
+      }
+    }
+  }
+}

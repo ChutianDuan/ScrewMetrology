@@ -1,0 +1,15 @@
+build*/
+result/*
+!result/README.md
+# 下载数据、旧项目数据和合成产物保留在本地；仓库包含获取与生成说明。
+data/*
+!data/README.md
+# 手动实验生成的根目录图片与本机系统文件。
+/test_input.png
+/output_gray.png
+.DS_Store
+# 本机凭据与环境配置不进入公开仓库。
+.env
+.env.*
+*.pem
+*.key

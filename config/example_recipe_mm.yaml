@@ -1,0 +1,8 @@
+%YAML:1.0
+# 示例配方，只供合成流程演示；不能用于未知实物规格。
+name: synthetic_screw_scaled
+unit: mm
+limits:
+  length: [19.5, 20.5]
+  width: [3.7, 4.3]
+  shaft_width: [1.7, 2.3]

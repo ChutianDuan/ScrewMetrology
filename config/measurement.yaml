@@ -1,0 +1,20 @@
+%YAML:1.0
+# MVTec 木纹背景；参数在代表样例上比较后冻结。
+segmentation: lab
+axis: pca
+invert: 1
+subpixel: 1
+blur: 3
+adaptive_block: 51
+adaptive_c: 8.
+morph_open: 3
+morph_close: 11
+lab_b_max: 145.
+lab_dark_l: 90.
+min_area: 1000.
+max_area: 200000.
+min_solidity: 0.25
+axis_ratio: 1.3
+head_ratio: 1.25
+gradient_min: 5.
+edge_search: 4

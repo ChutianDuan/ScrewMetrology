@@ -1,0 +1,7 @@
+%YAML:1.0
+name: synthetic_screw
+unit: px
+limits:
+  length: [195., 205.]
+  width: [37., 43.]
+  shaft_width: [17., 23.]

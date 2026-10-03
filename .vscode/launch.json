@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "configurations": [
+        {
+            "name": "(lldb) 单步调试 main_test",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/main_test",
+            "args": [],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "build-main-test"
+        },
+        {
+            "name": "(lldb) 调试 ScrewMetrology",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/screw_metrology",
+            "args": ["measure", "--input", "${workspaceFolder}/data/synthetic/images", "--config", "${workspaceFolder}/config/synthetic.yaml", "--output", "${workspaceFolder}/result/debug"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "build"
+        }
+    ]
+}

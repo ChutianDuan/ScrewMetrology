@@ -1,0 +1,42 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "cmake-configure",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-S", "${workspaceFolder}",
+                "-B", "${workspaceFolder}/build",
+                "-DCMAKE_BUILD_TYPE=Debug",
+                "-DOpenCV_DIR=/Volumes/chutian/opt/conda/envs/dev/lib/cmake/opencv5"
+            ],
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": "build-main-test",
+            "type": "shell",
+            "command": "cmake",
+            "args": ["--build", "${workspaceFolder}/build", "--target", "main_test"],
+            "problemMatcher": ["$gcc"],
+            "group": "build",
+            "dependsOn": ["cmake-configure"]
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build", "${workspaceFolder}/build"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "dependsOn": [
+                "cmake-configure"
+            ]
+        }
+    ]
+}
