@@ -12,14 +12,27 @@ if(OpenCV_VERSION_MAJOR GREATER_EQUAL 5)
     find_package(OpenCV REQUIRED COMPONENTS core imgproc imgcodecs geometry)
 endif()
 add_library(screw_core
-    src/config.cpp src/segmentation.cpp src/locator.cpp
-    src/metrology.cpp src/calibration.cpp src/io.cpp
-    src/evaluation.cpp src/visualization.cpp)
+    src/config.cpp
+    src/segmentation.cpp
+    src/locator.cpp
+    src/metrology.cpp
+    src/calibration.cpp
+    src/pipeline.cpp
+    src/io.cpp
+    src/evaluation.cpp
+    src/visualization.cpp
+    src/diagnostics.cpp)
 target_include_directories(screw_core PUBLIC include ${OpenCV_INCLUDE_DIRS})
 target_link_libraries(screw_core PUBLIC ${OpenCV_LIBS})
 target_compile_options(screw_core PRIVATE -Wall -Wextra -Wpedantic)
 add_executable(screw_metrology src/main.cpp)
 target_link_libraries(screw_metrology PRIVATE screw_core)
+
+add_executable(inspect_measurement src/inspect_measurement.cpp)
+target_link_libraries(inspect_measurement PRIVATE screw_core)
+
+add_executable(compare_axes src/compare_axes.cpp)
+target_link_libraries(compare_axes PRIVATE screw_core)
 
 # 手动学习入口：复用算法库；仅此程序额外链接窗口显示模块。
 find_package(OpenCV REQUIRED COMPONENTS highgui)
@@ -35,6 +48,28 @@ if(BUILD_TESTING)
     add_test(NAME screw_core COMMAND screw_tests ${CMAKE_CURRENT_BINARY_DIR}/test_artifacts)
     add_executable(generate_samples tests/generate_samples.cpp)
     target_link_libraries(generate_samples PRIVATE screw_core)
+    add_executable(generate_axis_cases tests/generate_axis_cases.cpp)
+    target_link_libraries(generate_axis_cases PRIVATE screw_core)
+    add_test(NAME axes_usage COMMAND compare_axes)
+    add_test(NAME axes_missing_list COMMAND compare_axes
+        ${CMAKE_CURRENT_SOURCE_DIR}/data/synthetic/images
+        ${CMAKE_CURRENT_SOURCE_DIR}/config/synthetic.yaml
+        ${CMAKE_CURRENT_BINARY_DIR}/test_artifacts/axes_missing /nonexistent/axes-list.txt)
+    set_tests_properties(axes_usage axes_missing_list PROPERTIES WILL_FAIL TRUE)
+    find_package(Python3 QUIET COMPONENTS Interpreter)
+    if(Python3_Interpreter_FOUND)
+        add_test(NAME axes_statistics COMMAND ${Python3_EXECUTABLE} -B
+            ${CMAKE_CURRENT_SOURCE_DIR}/tests/test_axis_comparison.py)
+        set_tests_properties(axes_statistics PROPERTIES
+            ENVIRONMENT "SCREW_COMPARE_EXE=$<TARGET_FILE:compare_axes>")
+    endif()
+    add_test(NAME inspect_usage COMMAND inspect_measurement)
+    add_test(NAME inspect_bad_decode COMMAND inspect_measurement
+        ${CMAKE_CURRENT_BINARY_DIR}/test_artifacts/bad.png
+        ${CMAKE_CURRENT_SOURCE_DIR}/config/synthetic.yaml
+        ${CMAKE_CURRENT_BINARY_DIR}/test_artifacts/inspect_bad)
+    set_tests_properties(inspect_usage inspect_bad_decode PROPERTIES WILL_FAIL TRUE)
+    set_tests_properties(inspect_bad_decode PROPERTIES DEPENDS screw_core)
     add_test(NAME cli_help COMMAND screw_metrology --help)
     add_test(NAME cli_bad_input COMMAND screw_metrology measure --input /nonexistent/screw.png)
     set_tests_properties(cli_bad_input PROPERTIES WILL_FAIL TRUE)
